@@ -1,0 +1,437 @@
+# ==========================================================
+# AeroSpace Config - Emoji & Numbers Workspaces (Fixed)
+# ==========================================================
+
+start-at-login = true
+default-root-container-orientation = 'auto'
+
+# Mouse follow logic
+on-focus-changed =['move-mouse window-lazy-center']
+on-focused-monitor-changed =['move-mouse monitor-lazy-center']
+
+[gaps]
+inner.horizontal = 10
+inner.vertical =   10
+outer.left =       10
+outer.bottom =     10
+outer.top =        10
+outer.right =      10
+
+[workspace-to-monitor-force-assignment]
+# --- GRUPPO PRODUZIONE (1-4) ---
+'1-Web-🌐'  = ['DELL.*1', 'DELL']
+'2-Code-💻' = ['DELL.*1', 'DELL']
+'3-AI-🤖'   = ['DELL.*1', 'DELL']
+'4-Misc-🗂️' = ['DELL.*2', 'built-in']
+'5-Teams-👥'   = ['DELL.*2', 'built-in']
+'6-Chat-💬'    = ['DELL.*2', 'built-in']
+'7-Spotify-🎵' = ['DELL.*2', 'built-in']
+'8-Mail-📧'    = ['DELL.*2', 'built-in']
+
+# ==========================================================
+# APP DETECTION RULES
+# ==========================================================
+
+# ----------------------------------------------------------
+# MONITOR DELL (PRODUZIONE)
+# ----------------------------------------------------------
+
+# --- Workspace: 1-Web-🌐 ---
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+run = 'move-node-to-workspace 1-Web-🌐'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Safari'
+run = 'move-node-to-workspace 1-Web-🌐'
+
+[[on-window-detected]]
+if.app-id = 'com.agent.super.extension.safari'
+run = 'move-node-to-workspace 1-Web-🌐'
+
+[[on-window-detected]]
+if.app-id = 'net.raymondhill.uBlock-Origin-Lite'
+run = 'move-node-to-workspace 1-Web-🌐'
+
+# --- Workspace: 2-Code-💻 ---
+[[on-window-detected]]
+if.app-id = 'com.microsoft.VSCode'
+run = 'move-node-to-workspace 2-Code-💻'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.dt.Xcode'
+run = 'move-node-to-workspace 2-Code-💻'
+
+[[on-window-detected]]
+if.app-id = 'com.usebruno.app'
+run = 'move-node-to-workspace 2-Code-💻'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Terminal'
+run = 'move-node-to-workspace 2-Code-💻'
+
+[[on-window-detected]]
+if.app-id = 'wang.jianing.app.OpenInTerminal-Lite'
+run = 'move-node-to-workspace 2-Code-💻'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Console'
+run = 'move-node-to-workspace 2-Code-💻'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.ScriptEditor2'
+run = 'move-node-to-workspace 2-Code-💻'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Automator'
+run = 'move-node-to-workspace 2-Code-💻'
+
+[[on-window-detected]]
+if.app-id = 'dev.kiro.desktop'
+run = 'move-node-to-workspace 2-Code-💻'
+
+# --- Workspace: 3-AI-🤖 ---
+[[on-window-detected]]
+if.app-id = 'com.liuliu.draw-things'
+run = 'move-node-to-workspace 3-AI-🤖'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.ImagePlayground'
+run = 'move-node-to-workspace 3-AI-🤖'
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome.app.bcmmjkglicliekcndffbfgcfopnidllp'
+run = 'move-node-to-workspace 3-AI-🤖'
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome.app.ggjocahimgaohmigbfhghnlfcnjemagj'
+run = 'move-node-to-workspace 3-AI-🤖'
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+if.window-title-regex-substring = '(?i)(chatgpt|claude)'
+run = 'move-node-to-workspace 3-AI-🤖'
+
+# --- Workspace: 4-Misc-🗂️ ---
+[[on-window-detected]]
+if.app-id = 'com.microsoft.rdc.macos'
+run = 'move-node-to-workspace 4-Misc-🗂️'
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.Excel'
+run = 'move-node-to-workspace 4-Misc-🗂️'
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.Word'
+run = 'move-node-to-workspace 4-Misc-🗂️'
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.Powerpoint'
+run = 'move-node-to-workspace 4-Misc-🗂️'
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.onenote.mac'
+run = 'move-node-to-workspace 4-Misc-🗂️'
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome.app.cnmnfnkedfekfidgojcdmndbcipagogc'
+run = 'move-node-to-workspace 4-Misc-🗂️'
+
+[[on-window-detected]]
+if.app-id = 'com.github.xournalpp'
+run = 'move-node-to-workspace 4-Misc-🗂️'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Notes'
+run = 'move-node-to-workspace 4-Misc-🗂️'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.reminders'
+run = 'move-node-to-workspace 4-Misc-🗂️'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.freeform'
+run = 'move-node-to-workspace 4-Misc-🗂️'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.journal'
+run = 'move-node-to-workspace 4-Misc-🗂️'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Preview'
+run = 'move-node-to-workspace 4-Misc-🗂️'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.TextEdit'
+run = 'move-node-to-workspace 4-Misc-🗂️'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.appstore'
+run = 'move-node-to-workspace 4-Misc-🗂️'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.iBooksX'
+run = 'move-node-to-workspace 4-Misc-🗂️'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Photos'
+run = 'move-node-to-workspace 4-Misc-🗂️'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Maps'
+run = 'move-node-to-workspace 4-Misc-🗂️'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.news'
+run = 'move-node-to-workspace 4-Misc-🗂️'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.ScreenContinuity'
+run = 'move-node-to-workspace 4-Misc-🗂️'
+
+# ----------------------------------------------------------
+# MONITOR BUILT-IN (COMUNICAZIONE & MEDIA)
+# ----------------------------------------------------------
+
+# --- Workspace: 5-Teams-👥 ---
+[[on-window-detected]]
+if.app-id = 'com.microsoft.teams2'
+run = 'move-node-to-workspace 5-Teams-👥'
+
+# --- Workspace: 6-Chat-💬 ---
+[[on-window-detected]]
+if.app-id = 'com.automattic.beeper.desktop'
+run = 'move-node-to-workspace 6-Chat-💬'
+
+[[on-window-detected]]
+if.app-id = 'net.whatsapp.WhatsApp'
+run = 'move-node-to-workspace 6-Chat-💬'
+
+[[on-window-detected]]
+if.app-id = 'com.tdesktop.Telegram'
+run = 'move-node-to-workspace 6-Chat-💬'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.MobileSMS'
+run = 'move-node-to-workspace 6-Chat-💬'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.FaceTime'
+run = 'move-node-to-workspace 6-Chat-💬'
+
+# --- Workspace: 7-Spotify-🎵 ---
+[[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = 'move-node-to-workspace 7-Spotify-🎵'
+
+[[on-window-detected]]
+if.app-id = 'oss.krtirtho.spotube'
+run = 'move-node-to-workspace 7-Spotify-🎵'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Music'
+run = 'move-node-to-workspace 7-Spotify-🎵'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.podcasts'
+run = 'move-node-to-workspace 7-Spotify-🎵'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.tv'
+run = 'move-node-to-workspace 7-Spotify-🎵'
+
+# --- Workspace: 8-Mail-📧 ---
+[[on-window-detected]]
+if.app-id = 'com.microsoft.Outlook'
+run = 'move-node-to-workspace 8-Mail-📧'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.mail'
+run = 'move-node-to-workspace 8-Mail-📧'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.iCal'
+run = 'move-node-to-workspace 8-Mail-📧'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.AddressBook'
+run = 'move-node-to-workspace 8-Mail-📧'
+
+# ----------------------------------------------------------
+# UTILITY IN BACKGROUND & FINESTRE FLOTTANTI
+# ----------------------------------------------------------
+
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run =['layout floating', 'move-node-to-workspace 4-Misc-🗂️']
+
+[[on-window-detected]]
+if.window-title-regex-substring = '(?i)(alert|warning|error|copy|move|delete|progress)'
+run = 'layout floating'
+
+# -- APP DI SISTEMA E UTILITY CHE DEVONO FLOTTARE --
+[[on-window-detected]]
+if.app-id = 'com.apple.systempreferences'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.calculator'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.ActivityMonitor'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.bitwarden.desktop'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.raycast.macos'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.lwouis.alt-tab-macos'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'me.mhaeuser.BatteryToolkit'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'pro.betterdisplay.BetterDisplay'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.caldis.Mos'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'org.pqrs.Karabiner-Elements.Settings'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'org.pqrs.Karabiner-EventViewer'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Passwords'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.findmy'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.keychainaccess'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.DiskUtility'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.SystemProfiler'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.clock'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.weather'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.OneDrive'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.paloaltonetworks.GlobalProtect.client'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.pingidentity.pingid.pcclient'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.netskope.client.Netskope-Client'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.CompanyPortalMac'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.jamfsoftware.selfservice.mac'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.github.macadmins.Nudge'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.arturgrochau.monitor-layout-manager'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'onebadidea.Swift-Quit'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.wulkano.kap'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Stickies'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.FontBook'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Dictionary'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.huion.HuionTablet'
+run = 'layout floating'
+
+# ==========================================================
+# KEYBINDINGS
+# ==========================================================
+[mode.main.binding]
+
+# --- Lancia App Rapide ---
+cmd-alt-enter = 'exec-and-forget open -a Terminal'
+cmd-alt-b     = 'exec-and-forget open -a "Google Chrome"'
+cmd-alt-c     = 'exec-and-forget open -a "Visual Studio Code"'
+cmd-alt-t     = 'exec-and-forget open -a "Microsoft Teams"'
+cmd-alt-e     = 'exec-and-forget open -a "Microsoft Outlook"'
+cmd-alt-s     = 'exec-and-forget open -a "Spotify"'
+cmd-alt-g     = 'exec-and-forget open -a "Gemini"'
+
+# --- Navigazione tra Monitor ---
+cmd-alt-f = 'fullscreen'
+alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+
+# --- Vai al Workspace ---
+ctrl-1 = 'workspace 1-Web-🌐'
+ctrl-2 = 'workspace 2-Code-💻'
+ctrl-3 = 'workspace 3-AI-🤖'
+ctrl-4 = 'workspace 4-Misc-🗂️'
+ctrl-5 = 'workspace 5-Teams-👥'
+ctrl-6 = 'workspace 6-Chat-💬'
+ctrl-7 = 'workspace 7-Spotify-🎵'
+ctrl-8 = 'workspace 8-Mail-📧'
+
+# --- Sposta la Finestra Attiva nel Workspace ---
+ctrl-shift-1 = 'move-node-to-workspace --focus-follows-window 1-Web-🌐'
+ctrl-shift-2 = 'move-node-to-workspace --focus-follows-window 2-Code-💻'
+ctrl-shift-3 = 'move-node-to-workspace --focus-follows-window 3-AI-🤖'
+ctrl-shift-4 = 'move-node-to-workspace --focus-follows-window 4-Misc-🗂️'
+ctrl-shift-5 = 'move-node-to-workspace --focus-follows-window 5-Teams-👥'
+ctrl-shift-6 = 'move-node-to-workspace --focus-follows-window 6-Chat-💬'
+ctrl-shift-7 = 'move-node-to-workspace --focus-follows-window 7-Spotify-🎵'
+ctrl-shift-8 = 'move-node-to-workspace --focus-follows-window 8-Mail-📧'

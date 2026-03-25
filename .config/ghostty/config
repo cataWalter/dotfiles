@@ -1,0 +1,13 @@
+# ~/.config/ghostty/config
+
+# Appearance
+theme = catppuccin-mocha
+font-family = "FiraCode Nerd Font"
+font-size = 14
+cursor-style = block
+
+# Window Management
+window-padding-x = 10
+window-padding-y = 10
+macos-titlebar-style = hidden
+window-decoration = false
