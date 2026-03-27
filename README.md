@@ -32,6 +32,7 @@ This repository stores a curated subset of machine settings and application conf
 - Raycast extension payloads and app caches
 - Large machine-specific or low-value application state
 - App window positions, recent folders, and telemetry identifiers
+- Workspace-specific service endpoints and command allowlists
 
 These exclusions are enforced in [.gitignore](.gitignore).
 

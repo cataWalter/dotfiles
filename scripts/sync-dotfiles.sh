@@ -33,6 +33,16 @@ sanitize_gitconfig() {
   fi
 }
 
+sanitize_vscode_settings() {
+  local target_path=$1
+
+  if [[ -f "$target_path" ]]; then
+    perl -0pi -e 's@\n    "sonarlint\.connectedMode\.connections\.sonarqube": \[\n        \{\n            "serverUrl": ".*?",\n            "connectionId": ".*?"\n        \}\n    \],@@s' "$target_path"
+    perl -0pi -e 's@\n    "kilo-code\.allowedCommands": \[.*?\],@@s' "$target_path"
+    perl -0pi -e 's@\n    "kilo-code\.deniedCommands": \[\],@@s' "$target_path"
+  fi
+}
+
 export_plist() {
   local plist_name=$1
   local source_path="$home_dir/Library/Preferences/$plist_name"
@@ -73,6 +83,7 @@ copy_file "$home_dir/.config/borders/bordersrc" "$repo_root/.config/borders/bord
 copy_file "$home_dir/.config/gh/config.yml" "$repo_root/.config/gh/config.yml"
 
 copy_file "$home_dir/Library/Application Support/Code/User/settings.json" "$repo_root/.config/vscode/settings.json"
+sanitize_vscode_settings "$repo_root/.config/vscode/settings.json"
 copy_file "$home_dir/Library/Application Support/Code/User/keybindings.json" "$repo_root/.config/vscode/keybindings.json"
 copy_dir_contents "$home_dir/Library/Application Support/Code/User/snippets" "$repo_root/.config/vscode/snippets"
 
