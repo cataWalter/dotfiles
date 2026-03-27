@@ -1,0 +1,17 @@
+.DS_Store
+
+# Sensitive machine-specific configs
+.config/gh/hosts.yml
+.config/kube/
+.config/maven/
+.config/bruno/
+
+# App secrets and volatile state
+.config/macos/preferences/com.automattic.beeper.desktop.plist
+.config/macos/preferences/com.gaosun.eul.plist
+.config/macos/preferences/com.lwouis.alt-tab-macos.plist
+.config/macos/preferences/oss.krtirtho.spotube.plist
+.config/macos/preferences/com.raycast.macos.plist
+.config/macos/preferences/com.spotify.client.plist
+.config/macos/preferences/org.sil.ukelele.plist
+.config/raycast/

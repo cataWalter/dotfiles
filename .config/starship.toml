@@ -1,17 +1,16 @@
-# ~/.config/starship.toml
 add_newline = false
-format = """$directory$git_branch$git_status$fill$cmd_duration$line_break$character"""
 
-[fill]
-symbol = " "
+format = """$directory$git_branch$git_status$all$line_break$character"""
+right_format = """$cmd_duration"""
 
 [directory]
 style = "bold cyan"
 truncation_length = 3
 fish_style_pwd_dir_length = 1
+read_only = " 🔒" # Emoji standard
 
 [git_branch]
-symbol = "󰊢 "
+symbol = "🌿 " # Emoji standard
 style = "purple"
 
 [git_status]
@@ -20,8 +19,10 @@ format = '([\[$all_status$ahead_behind\]]($style) )'
 
 [cmd_duration]
 min_time = 500
-format = "took [$duration](yellow)"
+format = "[⏱ $duration]($style)" # Emoji standard
+style = "yellow italic"
 
 [character]
 success_symbol = "[➜](bold green)"
-error_symbol = "[➜](bold red)"
+error_symbol = "[✘](bold red)"
+vicmd_symbol = "[❮](bold yellow)"

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SUAutomaticallyUpdate</key>
+	<false/>
+	<key>SUEnableAutomaticChecks</key>
+	<true/>
+	<key>SUHasLaunchedBefore</key>
+	<true/>
+	<key>SUSendProfileInfo</key>
+	<false/>
+	<key>SUUpdateGroupIdentifier</key>
+	<integer>3133803568</integer>
+	<key>activationKeyType</key>
+	<integer>1</integer>
+	<key>dismissKeyType</key>
+	<integer>1</integer>
+	<key>enableMacosShortcuts</key>
+	<true/>
+	<key>hideMenuIcon</key>
+	<true/>
+	<key>keyBetweenDelay</key>
+	<real>0.5</real>
+	<key>keyHoldingDelay</key>
+	<real>0.25</real>
+	<key>launchAtLogin</key>
+	<true/>
+	<key>silentLaunchQuit</key>
+	<true/>
+	<key>wizardDone</key>
+	<true/>
+</dict>
+</plist>

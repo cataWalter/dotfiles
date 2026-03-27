@@ -1,0 +1,15 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[includeIf "gitdir:~/Projects/Work/"]
+	path = ~/.gitconfig-work
+[includeIf "gitdir:~/Projects/Personal/"]
+	path = ~/.gitconfig-personal
+[push]
+	autoSetupRemote = true
+[credential]
+	useHttpPath = true
+[pull]
+	rebase = true

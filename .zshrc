@@ -29,12 +29,15 @@ alias gitamend="git add .; git commit --amend --no-edit; git push -f"
 # ==========================================
 # PLUGINS & PROMPT
 # ==========================================
-# Hardcoded brew path for maximum speed
-source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
-antidote load ~/.zsh_plugins.txt
+if [[ -f /opt/homebrew/opt/antidote/share/antidote/antidote.zsh ]]; then
+	source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
+	antidote load ~/.zsh_plugins.txt
+fi
 
-export STARSHIP_CONFIG=~/.config/starship.toml
-eval "$(starship init zsh)"
+if command -v starship >/dev/null 2>&1; then
+	export STARSHIP_CONFIG="$HOME/.config/starship.toml"
+	eval "$(starship init zsh)"
+fi
 
 # ==========================================
 # SHELL OPTIONS
@@ -44,4 +47,6 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt SHARE_HISTORY
 
-# Load local environment if it exists[ -f "$HOME/.local/bin/env" ] && . "$HOME/.local/bin/env"
+if [[ -f "$HOME/.local/bin/env" ]]; then
+	. "$HOME/.local/bin/env"
+fi

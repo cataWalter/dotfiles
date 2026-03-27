@@ -1,0 +1,29 @@
+{
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "chat.tools.terminal.autoApprove": {
+        "podman": true
+    },
+    "chat.editing.confirmEditRequestRemoval": false,
+    "chat.editing.confirmEditRequestRetry": false,
+    "sonarlint.connectedMode.connections.sonarqube": [
+        {
+            "serverUrl": "https://rndwww.nce.amadeus.net/sonar",
+            "connectionId": "https-rndwww-nce-amadeus-net-sonar-"
+        }
+    ],
+    "sonarlint.ideLabsEnabled": true,
+    "git.autofetch": true,
+    "files.autoSave": "afterDelay",
+    "security.workspace.trust.untrustedFiles": "open",
+    "git.confirmSync": false,
+    "kilo-code.allowedCommands": [
+        "git log",
+        "git diff",
+        "git show",
+        "cd ~/Projects/Personal",
+        "gh repo clone cataWalter/skillogue-web"
+    ],
+    "kilo-code.deniedCommands": [],
+    "terminal.external.osxExec": "Ghostty.app"
+}

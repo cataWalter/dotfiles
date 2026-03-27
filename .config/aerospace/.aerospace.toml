@@ -18,15 +18,30 @@ outer.top =        10
 outer.right =      10
 
 [workspace-to-monitor-force-assignment]
-# --- GRUPPO PRODUZIONE (1-4) ---
-'1-Web-🌐'  = ['DELL.*1', 'DELL']
-'2-Code-💻' = ['DELL.*1', 'DELL']
-'3-AI-🤖'   = ['DELL.*1', 'DELL']
-'4-Misc-🗂️' = ['DELL.*2', 'built-in']
-'5-Teams-👥'   = ['DELL.*2', 'built-in']
-'6-Chat-💬'    = ['DELL.*2', 'built-in']
-'7-Spotify-🎵' = ['DELL.*2', 'built-in']
-'8-Mail-📧'    = ['DELL.*2', 'built-in']
+# ==========================================
+# MONITOR 1 (DELL 1) - Always hosts 1, 2, 3, 4
+# ==========================================
+'1-Web-🌐'     =[2, 'built-in']
+'2-Code-💻'    =[2, 'built-in']
+'3-AI-🤖'      =[2, 'built-in']
+'4-Misc-1-🗂️'  =[2, 'built-in']
+
+# ==========================================
+# MONITOR 2 (DELL 2) - Always hosts 5, 8, 9
+# ==========================================
+'5-Teams-👥'   = [1, 'built-in']
+'8-Mail-📧'    = [1, 'built-in']
+'9-Misc-2-🗂️'  = [1, 'built-in']
+
+# ==========================================
+# THE SHIFTERS - Hosts 6, 7, 0
+# (Built-in on 3-screens -> DELL 2 on 2-screens)
+# ==========================================
+'6-Chat-💬'    =['built-in', 1]
+'7-Spotify-🎵' =['built-in', 1]
+'10-Misc-3-🗂️'            = ['built-in', 1] 
+# (Feel free to rename '0' to your actual 10th workspace name)
+
 
 # ==========================================================
 # APP DETECTION RULES
@@ -68,6 +83,9 @@ run = 'move-node-to-workspace 2-Code-💻'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.Terminal'
+run = 'move-node-to-workspace 2-Code-💻'
+[[on-window-detected]]
+if.app-id = 'com.apple.Ghostty'
 run = 'move-node-to-workspace 2-Code-💻'
 
 [[on-window-detected]]
@@ -404,7 +422,7 @@ run = 'layout floating'
 [mode.main.binding]
 
 # --- Lancia App Rapide ---
-cmd-alt-enter = 'exec-and-forget open -a Terminal'
+cmd-alt-enter = 'exec-and-forget open -a Ghostty'
 cmd-alt-b     = 'exec-and-forget open -a "Google Chrome"'
 cmd-alt-c     = 'exec-and-forget open -a "Visual Studio Code"'
 cmd-alt-t     = 'exec-and-forget open -a "Microsoft Teams"'
@@ -420,18 +438,22 @@ alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 ctrl-1 = 'workspace 1-Web-🌐'
 ctrl-2 = 'workspace 2-Code-💻'
 ctrl-3 = 'workspace 3-AI-🤖'
-ctrl-4 = 'workspace 4-Misc-🗂️'
+ctrl-4 = 'workspace 4-Misc-1-🗂️'
 ctrl-5 = 'workspace 5-Teams-👥'
 ctrl-6 = 'workspace 6-Chat-💬'
 ctrl-7 = 'workspace 7-Spotify-🎵'
 ctrl-8 = 'workspace 8-Mail-📧'
+ctrl-9 = 'workspace 9-Misc-2-🗂️'
+ctrl-0 = 'workspace 10-Misc-3-🗂️'
 
 # --- Sposta la Finestra Attiva nel Workspace ---
 ctrl-shift-1 = 'move-node-to-workspace --focus-follows-window 1-Web-🌐'
 ctrl-shift-2 = 'move-node-to-workspace --focus-follows-window 2-Code-💻'
 ctrl-shift-3 = 'move-node-to-workspace --focus-follows-window 3-AI-🤖'
-ctrl-shift-4 = 'move-node-to-workspace --focus-follows-window 4-Misc-🗂️'
+ctrl-shift-4 = 'move-node-to-workspace --focus-follows-window 4-Misc-1-🗂️'
 ctrl-shift-5 = 'move-node-to-workspace --focus-follows-window 5-Teams-👥'
 ctrl-shift-6 = 'move-node-to-workspace --focus-follows-window 6-Chat-💬'
 ctrl-shift-7 = 'move-node-to-workspace --focus-follows-window 7-Spotify-🎵'
 ctrl-shift-8 = 'move-node-to-workspace --focus-follows-window 8-Mail-📧'
+ctrl-shift-9 = 'move-node-to-workspace --focus-follows-window 9-Misc-2-🗂️'
+ctrl-shift-0 = 'move-node-to-workspace --focus-follows-window 10-Misc-3-🗂️'
