@@ -1,0 +1,37 @@
+# --- Le tue impostazioni attuali ---
+# Appearance
+theme = "Argonaut"
+font-family = "FiraCode Nerd Font"
+font-size = 14
+cursor-style = block
+
+# Window Management
+window-padding-x = 10
+window-padding-y = 10
+macos-titlebar-style = tabs
+window-decoration = false
+
+# Performance
+background-opacity = 0.80
+background-blur-radius = 20
+
+# --- Nuove impostazioni per migliorare il workflow ---
+
+# Comportamento & UX
+
+# Nasconde il mouse mentre digiti, per un look più pulito
+mouse-hide-while-typing = true
+
+# Copia automaticamente il testo negli appunti appena lo selezioni
+copy-on-select = true
+
+# Aumenta notevolmente la cronologia di scorrimento del terminale
+scrollback-limit = 100000
+
+# Integrazione Shell & macOS (Ideale per Zsh)
+
+# Fondamentale per Zsh: permette di usare Option (⌥) + Frecce per saltare di parola in parola
+macos-option-as-alt = true
+
+# Forza la barra del titolo scura (si abbina meglio al background opaco)
+window-theme = dark

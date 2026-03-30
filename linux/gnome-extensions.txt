@@ -1,0 +1,17 @@
+blur-my-shell@aunetx
+dash-to-dock@micxgx.gmail.com
+rounded-window-corners@fxgn
+just-perfection-desktop@just-perfection
+Vitals@CoreCoding.com
+burn-my-windows@schneegans.github.com
+compiz-windows-effect@hermes83.github.com
+mediacontrols@cliffniff.github.com
+drive-menu@gnome-shell-extensions.gcampax.github.com
+space-bar@luchrioh
+openbar@neuromorph
+apps-menu@gnome-shell-extensions.gcampax.github.com
+background-logo@fedorahosted.org
+launch-new-instance@gnome-shell-extensions.gcampax.github.com
+places-menu@gnome-shell-extensions.gcampax.github.com
+window-list@gnome-shell-extensions.gcampax.github.com
+pop-shell@system76.com

@@ -6,12 +6,120 @@
 .config/maven/
 .config/bruno/
 
-# App secrets and volatile state
-.config/macos/preferences/com.automattic.beeper.desktop.plist
-.config/macos/preferences/com.gaosun.eul.plist
-.config/macos/preferences/com.lwouis.alt-tab-macos.plist
-.config/macos/preferences/oss.krtirtho.spotube.plist
-.config/macos/preferences/com.raycast.macos.plist
-.config/macos/preferences/com.spotify.client.plist
-.config/macos/preferences/org.sil.ukelele.plist
-.config/raycast/
+# macOS - App secrets and volatile state
+macos/.config/macos/preferences/com.automattic.beeper.desktop.plist
+macos/.config/macos/preferences/com.gaosun.eul.plist
+macos/.config/macos/preferences/com.lwouis.alt-tab-macos.plist
+macos/.config/macos/preferences/oss.krtirtho.spotube.plist
+macos/.config/macos/preferences/com.raycast.macos.plist
+macos/.config/macos/preferences/com.spotify.client.plist
+macos/.config/macos/preferences/org.sil.ukelele.plist
+macos/.config/raycast/
+
+# Linux - Volatile app data and caches
+linux/.config/google-chrome/
+linux/.config/Code/Cache/
+linux/.config/Code/CachedData/
+linux/.config/Code/CachedConfigurations/
+linux/.config/Code/CachedExtensionVSIXs/
+linux/.config/Code/Code Cache/
+linux/.config/Code/blob_storage/
+linux/.config/Code/Crashpad/
+linux/.config/Code/DawnGraphiteCache/
+linux/.config/Code/DawnWebGPUCache/
+linux/.config/Code/Dictionaries/
+linux/.config/Code/extensions/
+linux/.config/Code/Local Storage/
+linux/.config/Code/logs/
+linux/.config/Code/Network/
+linux/.config/Code/Service Worker/
+linux/.config/Code/Session Storage/
+linux/.config/Code/shared_storage/
+linux/.config/Code/User/globalStorage/
+linux/.config/Code/User/History/
+linux/.config/Code/User/profiles/
+linux/.config/Code/User/sync/
+linux/.config/Code/User/workspaceStorage/
+linux/.config/Code/User/chatLanguageModels.json
+linux/.config/Code/GPUCache/
+linux/.config/Code/WebStorage/
+linux/.config/Code/code.lock
+linux/.config/Code/Cookies*
+linux/.config/Code/DIPS*
+linux/.config/Code/languagepacks.json
+linux/.config/Code/machineid
+linux/.config/Code/Network Persistent State
+linux/.config/Code/Preferences
+linux/.config/Code/SharedStorage*
+linux/.config/Code/TransportSecurity
+linux/.config/Code/Trust Tokens*
+linux/.config/Code/Shared Dictionary/
+linux/.config/dconf/
+linux/.config/ibus/
+linux/.config/pulse/
+linux/.config/procps/
+linux/.config/systemd/
+linux/.config/menus/
+linux/.config/nautilus/
+linux/.config/goa-1.0/
+linux/.config/abrt/
+linux/.config/evolution/
+linux/.config/.mozilla/
+linux/.config/burn-my-windows/
+linux/.config/org.gnome.Ptyxis/
+linux/.config/monitors.xml
+linux/.config/monitors.xml~
+linux/.config/gnome-initial-setup-done
+linux/.config/.gsd-keyboard.settings-ported
+
+# Linux - Local share volatile data
+linux/.local/share/applications/
+linux/.local/share/flatpak/db/
+linux/.local/share/flatpak/repo/
+linux/.local/share/gnome-shell/application_state
+linux/.local/share/gnome-shell/session-active-history.json
+linux/.local/share/gnome-shell/session.gvdb
+linux/.local/share/gnome-shell/update-check-*
+linux/.local/share/gnome-shell/extensions/*/components/
+linux/.local/share/gnome-shell/extensions/*/conveniences/
+linux/.local/share/gnome-shell/extensions/*/dbus/
+linux/.local/share/gnome-shell/extensions/*/effects/
+linux/.local/share/gnome-shell/extensions/*/helpers/
+linux/.local/share/gnome-shell/extensions/*/icons/
+linux/.local/share/gnome-shell/extensions/*/locale/
+linux/.local/share/gnome-shell/extensions/*/manager/
+linux/.local/share/gnome-shell/extensions/*/media/
+linux/.local/share/gnome-shell/extensions/*/patch/
+linux/.local/share/gnome-shell/extensions/*/preferences/
+linux/.local/share/gnome-shell/extensions/*/resources/
+linux/.local/share/gnome-shell/extensions/*/schemas/
+linux/.local/share/gnome-shell/extensions/*/src/
+linux/.local/share/gnome-shell/extensions/*/types/
+linux/.local/share/gnome-shell/extensions/*/ui/
+linux/.local/share/gnome-shell/extensions/*/utils/
+linux/.local/share/gnome-shell/extensions/*/window_picker/
+linux/.local/share/gnome-shell/extensions/*/*.js
+linux/.local/share/gnome-shell/extensions/*/*.css
+linux/.local/share/gnome-shell/extensions/*/*.gresource
+linux/.local/share/gnome-shell/extensions/*/*.ui
+linux/.local/share/gnome-shell/extensions/*/LICENSE
+linux/.local/share/gnome-shell/extensions/*/README.md
+linux/.local/share/gnome-shell/extensions/*/CHANGELOG.md
+linux/.local/share/gnome-shell/extensions/*/prefs.js
+linux/.local/share/gnome-shell/extensions/*/extension.js
+linux/.local/share/icc/
+linux/.local/share/ibus-typing-booster/
+linux/.local/share/nautilus/
+linux/.local/share/org.gnome.Ptyxis/
+linux/.local/share/keyrings/
+linux/.local/share/sounds/
+linux/.local/share/backgrounds/
+linux/.local/share/containers/
+linux/.local/share/folks/
+linux/.local/share/gnome-settings-daemon/
+linux/.local/share/gvfs-metadata/
+linux/.local/share/icons/
+linux/.local/share/pki/
+linux/.local/share/recently-used.xbel
+linux/.local/share/wget/
+linux/.local/share/desktop-directories/
