@@ -1,6 +1,6 @@
 # Dotfiles
 
-This repository stores a curated subset of machine settings and application configuration for both **macOS** and **Linux**.
+This repository stores a curated subset of machine settings and application configuration for **macOS**, **Linux**, and **Windows**.
 
 ## Structure
 
@@ -25,33 +25,48 @@ This repository stores a curated subset of machine settings and application conf
 │   └── scripts/
 │       ├── apply-dotfiles.sh
 │       └── sync-dotfiles.sh
-└── linux/              # Linux-specific configs
-    ├── .bashrc
-    ├── .bash_profile
-    ├── .bash_logout
+├── linux/              # Linux-specific configs
+│   ├── .bashrc
+│   ├── .bash_profile
+│   ├── .bash_logout
+│   ├── .config/
+│   │   ├── dconf/
+│   │   ├── gh/
+│   │   ├── ghostty/
+│   │   ├── gtk-3.0/
+│   │   ├── gtk-4.0/
+│   │   ├── mimeapps.list
+│   │   ├── pop-shell/
+│   │   ├── starship.toml
+│   │   ├── user-dirs.dirs
+│   │   ├── user-dirs.locale
+│   │   ├── vscode/
+│   │   └── xournalpp/
+│   ├── .local/
+│   │   └── share/
+│   │       ├── flatpak/overrides/
+│   │       └── gnome-shell/extensions/
+│   ├── gnome-extensions.txt    # List of installed GNOME extensions
+│   ├── installed-packages.txt  # List of all installed RPM packages
+│   └── scripts/
+│       ├── apply-dotfiles.sh
+│       ├── sync-dotfiles.sh
+│       └── generate-system-info.sh
+└── windows/            # Windows-specific configs
+    ├── Microsoft.PowerShell_profile.ps1  # PowerShell profile
+    ├── Scoopfile.json  # Scoop packages
     ├── .config/
-    │   ├── dconf/
     │   ├── gh/
-    │   ├── ghostty/
-    │   ├── gtk-3.0/
-    │   ├── gtk-4.0/
-    │   ├── mimeapps.list
-    │   ├── pop-shell/
-    │   ├── starship.toml
-    │   ├── user-dirs.dirs
-    │   ├── user-dirs.locale
+    │   │   └── config.yml
     │   ├── vscode/
-    │   └── xournalpp/
-    ├── .local/
-    │   └── share/
-    │       ├── flatpak/overrides/
-    │       └── gnome-shell/extensions/
-    ├── gnome-extensions.txt    # List of installed GNOME extensions
-    ├── installed-packages.txt  # List of all installed RPM packages
+    │   │   ├── settings.json
+    │   │   └── keybindings.json
+    │   └── WindowsTerminal/
+    │       └── settings.json
+    ├── installed-packages.txt  # List of installed Scoop packages
     └── scripts/
-        ├── apply-dotfiles.sh
-        ├── sync-dotfiles.sh
-        └── generate-system-info.sh
+        ├── apply-dotfiles.ps1
+        └── sync-dotfiles.ps1
 ```
 
 ## What is synced
@@ -109,6 +124,22 @@ This repository stores a curated subset of machine settings and application conf
   - `.local/share/flatpak/overrides/global` - Flatpak filesystem permissions
   - `.local/share/gnome-shell/extensions/*/metadata.json` - Extension metadata for all 11 custom extensions
 
+### Windows
+- Shell config:
+  - `Microsoft.PowerShell_profile.ps1` - PowerShell profile with aliases, functions, and prompt setup
+- Package management:
+  - `Scoopfile.json` - List of packages managed via Scoop
+- Terminal config:
+  - `.config/WindowsTerminal/settings.json` - Windows Terminal settings with custom color scheme
+- CLI tools config:
+  - `.config/starship.toml` (shared with macOS)
+  - `.config/gh/config.yml`
+- App config:
+  - `.config/vscode/settings.json`
+  - `.config/vscode/keybindings.json`
+- System inventory:
+  - `installed-packages.txt` - List of installed Scoop packages
+
 ## System Inventory
 
 ### GNOME Extensions
@@ -163,6 +194,11 @@ These exclusions are enforced in [.gitignore](.gitignore).
 ./linux/scripts/sync-dotfiles.sh
 ```
 
+### Windows
+```powershell
+.\windows\scripts\sync-dotfiles.ps1
+```
+
 ## Apply onto a machine
 
 ### macOS
@@ -175,10 +211,44 @@ These exclusions are enforced in [.gitignore](.gitignore).
 ./linux/scripts/apply-dotfiles.sh
 ```
 
+### Windows
+```powershell
+.\windows\scripts\apply-dotfiles.ps1
+```
+
 The apply scripts create target directories as needed and copy the saved configs back to your home directory.
+
+## Windows Setup
+
+### Prerequisites
+
+1. **Install Scoop** (Windows package manager):
+   ```powershell
+   Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+   Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+   ```
+
+2. **Install required packages**:
+   ```powershell
+   scoop install git starship gh fzf ripgrep fd bat eza zoxide
+   ```
+
+3. **Install Windows Terminal** from Microsoft Store or via Scoop:
+   ```powershell
+   scoop install windows-terminal
+   ```
+
+### PowerShell Profile Location
+
+The PowerShell profile is installed at:
+- **PowerShell 7+**: `$HOME\Documents\PowerShell\Microsoft.PowerShell_profile.ps1`
+- **Windows PowerShell**: `$HOME\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1`
 
 ## Notes
 
 - Preference plist changes may require restarting the target app before they take effect.
 - Some applications also keep state outside the saved files in this repo.
 - Review diffs before committing because app configs can still contain machine-specific values.
+- On Windows, some configs may need to be copied manually to AppData locations if the scripts don't detect the correct paths.
+- Windows Terminal settings.json location may vary depending on installation source (Store vs. Scoop).
+- PowerShell execution policy may need to be set to `RemoteSigned` for scripts to run.
