@@ -123,3 +123,63 @@ linux/.local/share/pki/
 linux/.local/share/recently-used.xbel
 linux/.local/share/wget/
 linux/.local/share/desktop-directories/
+
+# Windows - Volatile app data and caches
+windows/.config/Code/Cache/
+windows/.config/Code/CachedData/
+windows/.config/Code/CachedConfigurations/
+windows/.config/Code/CachedExtensionVSIXs/
+windows/.config/Code/Code Cache/
+windows/.config/Code/blob_storage/
+windows/.config/Code/Crashpad/
+windows/.config/Code/DawnGraphiteCache/
+windows/.config/Code/DawnWebGPUCache/
+windows/.config/Code/Dictionaries/
+windows/.config/Code/extensions/
+windows/.config/Code/Local Storage/
+windows/.config/Code/logs/
+windows/.config/Code/Network/
+windows/.config/Code/Service Worker/
+windows/.config/Code/Session Storage/
+windows/.config/Code/shared_storage/
+windows/.config/Code/User/globalStorage/
+windows/.config/Code/User/History/
+windows/.config/Code/User/profiles/
+windows/.config/Code/User/sync/
+windows/.config/Code/User/workspaceStorage/
+windows/.config/Code/User/chatLanguageModels.json
+windows/.config/Code/GPUCache/
+windows/.config/Code/WebStorage/
+windows/.config/Code/code.lock
+windows/.config/Code/Cookies*
+windows/.config/Code/DIPS*
+windows/.config/Code/languagepacks.json
+windows/.config/Code/machineid
+windows/.config/Code/Network Persistent State
+windows/.config/Code/Preferences
+windows/.config/Code/SharedStorage*
+windows/.config/Code/TransportSecurity
+windows/.config/Code/Trust Tokens*
+windows/.config/Code/Shared Dictionary/
+
+# Windows - Sensitive configs
+windows/.config/gh/hosts.yml
+windows/.config/kube/
+windows/.config/maven/
+windows/.config/bruno/
+
+# Windows - App data that shouldn't be synced
+windows/AppData/
+windows/.ssh/
+windows/.gnupg/
+windows/.docker/
+windows/.nuget/
+windows/.gradle/
+windows/.m2/
+windows/.cargo/
+windows/.rustup/
+windows/.vscode/extensions/
+windows/.vscode-oss/
+
+# Windows - PowerShell history
+windows/PSReadLine/
